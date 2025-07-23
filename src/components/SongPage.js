@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Player from './Player';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -39,6 +40,8 @@ const Nav = styled.div`
 `;
 
 function SongPage() {
+  const navigate = useNavigate();
+  const { id } = useParams();
   // Placeholder song data
   const song = {
     src: '', // TODO: replace with actual mp3 url
@@ -47,15 +50,22 @@ function SongPage() {
     lyrics: 'Lyrics go here...\n(You can add the real lyrics later.)',
     note: 'Personal note or poem goes here...'
   };
+  // Placeholder min/max song IDs
+  const minId = 1;
+  const maxId = 5;
+  const currentId = Number(id) || minId;
+  const goPrev = () => navigate(`/song/${currentId - 1}`);
+  const goNext = () => navigate(`/song/${currentId + 1}`);
+  const goHome = () => navigate('/');
   return (
     <Wrapper>
       <Player src={song.src} art={song.art} alt={song.alt} />
       <Lyrics>{song.lyrics}</Lyrics>
       <Note>{song.note}</Note>
       <Nav>
-        <button>Prev</button>
-        <button>Home</button>
-        <button>Next</button>
+        <button onClick={goPrev} disabled={currentId <= minId}>Prev</button>
+        <button onClick={goHome}>Home</button>
+        <button onClick={goNext} disabled={currentId >= maxId}>Next</button>
       </Nav>
     </Wrapper>
   );
