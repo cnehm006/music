@@ -33,7 +33,7 @@ function Blog() {
     <Wrapper>
       <Title>blog</Title>
       <Text>
-        (You can write and post your thoughts here. This is your blog page.)
+        (Coming soon.)
       </Text>
     </Wrapper>
   );

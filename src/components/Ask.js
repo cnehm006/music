@@ -33,7 +33,7 @@ function Ask() {
     <Wrapper>
       <Title>ask</Title>
       <Text>
-        (Users can send you questions or messages here. You can respond and post them publicly.)
+        (Coming soon.)
       </Text>
     </Wrapper>
   );

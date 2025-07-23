@@ -1,59 +1,57 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const PlayerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 `;
 
 const Art = styled.img`
-  width: 180px;
-  height: 180px;
+  width: 320px;
+  height: 320px;
   object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border-radius: 18px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
   background: #e0dedb;
 `;
 
-const Controls = styled.div`
+const SongInfo = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  margin-top: 1.2rem;
 `;
 
-const Button = styled.button`
-  background: #eceae7;
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: #444;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-}
+const Title = styled.div`
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+  color: #222;
+`;
 
-  &:hover, &:focus {
-    color: #111;
-    outline: none;
-  }
+const Artist = styled.div`
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 400;
+`;
+
+const Controls = styled.div`
+  margin-bottom: 2rem;
 `;
 
 const Seek = styled.input`
-  width: 180px;
+  width: 220px;
   accent-color: #bdb8b1;
 `;
 
-function Player({ src, art, alt }) {
-  const audioRef = useRef();
-  const [playing, setPlaying] = useState(false);
-  const [current, setCurrent] = useState(0);
-  const [duration, setDuration] = useState(0);
+function Player({ src, art, alt, title, artist }) {
+  const audioRef = React.useRef();
+  const [playing, setPlaying] = React.useState(false);
+  const [current, setCurrent] = React.useState(0);
+  const [duration, setDuration] = React.useState(0);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -82,10 +80,14 @@ function Player({ src, art, alt }) {
   return (
     <PlayerWrapper>
       {art && <Art src={art} alt={alt || 'Song art'} />}
+      <SongInfo>
+        <Title>{title}</Title>
+        <Artist>{artist}</Artist>
+      </SongInfo>
       <Controls>
-        <Button onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
+        <button onClick={togglePlay} aria-label={playing ? 'Pause' : 'Play'}>
           {playing ? '❚❚' : '►'}
-        </Button>
+        </button>
         <Seek
           type="range"
           min={0}
