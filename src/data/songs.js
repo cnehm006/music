@@ -180,6 +180,44 @@ We would dance to our music
 We would worry about nothing
 
 We have time for that when we’re dead.`
+  },
+  {
+    id: 'landscape',
+    title: 'Landscape With a Fairy',
+    artist: 'aspidistrafly',
+    src: process.env.PUBLIC_URL + '/songs/landscape/song.mp3',
+    art: process.env.PUBLIC_URL + '/songs/landscape/cover.jpg',
+    lyrics: `Dyed in daybreak's light
+Sound asleep, curled
+Blue bird's first flight
+Silent world
+
+Burnished by Autumn
+Trees hued in crimson
+Yet the days darken
+Now you've gone away
+
+Waking from a dream
+The sun floods her eyes
+To unravel such a scene
+Of scarlet splendour
+
+Burnished by Autumn
+Trees hued in crimson
+Yet the days darken
+Now you've gone away
+
+"If I went out...
+Maybe we could find the door to my mothers garden
+If we found the door, we could go inside"`,
+    note: [
+      `The song reminded me of her. Her eyes, her quietness, the way she carried this kind of fragile sweetness like she didn’t even know it was there. She once told me...`,
+      `I came into her life at the perfect time. Said I saved her. That she was falling apart and I showed up like some kind of angel, holding things together that weren’t mine to fix, but I tried anyway. And I would’ve kept trying. I would’ve done anything for her. Every time the song played she cried. 
+
+And back then I thought it was love, or at least something close to it. I asked her about it long after we broke up. What those tears meant. And she told me the truth. She said it was guilt, mostly. That she never found me attractive. That she didn’t know how to tell me. But also she said it was because of the immense love I gave her. Because she had never felt something that deep, that safe, that unconditional. It overwhelmed her. And it broke her heart, knowing she couldn’t feel it back. 
+
+I think about that a lot. How someone can cry both for what they don’t feel and for what they were never given before. It doesn’t make the pain go away, but it softens it. Just a bit. Enough to remember her without bitterness. The song still makes me think of her. Not because of what we were. But because of how hard I loved her. How much I gave. And how maybe, for a moment, even if it wasn’t love, she felt it too. Listening to it doesn’t break me anymore. It just lingers, like the echo of something gentle that didn’t stay. Maybe that’s all love ever really is. Something soft that leaves a mark.`
+    ]
   }
 ];
 

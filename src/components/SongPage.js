@@ -151,9 +151,10 @@ function NoteReveal({ note }) {
   const [unlocked, setUnlocked] = useState(false);
   const [hideOverlay, setHideOverlay] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const lines = note.split('\n');
+  const isArray = Array.isArray(note);
+  const lines = isArray ? note[0].split('\n') : note.split('\n');
   const initialLines = id === 'iexist' ? 1 : 4;
-  const showToggle = id !== 'iexist' && lines.length > initialLines;
+  const showToggle = isArray ? true : id !== 'iexist' && lines.length > initialLines;
 
   useEffect(() => {
     setUnlocked(false);
@@ -181,12 +182,27 @@ function NoteReveal({ note }) {
         </AnimatePresence>
         {unlocked || hideOverlay ? (
           <>
-            {id === 'iexist' && !expanded
-              ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines[0]}</span></>
-              : showToggle && !expanded
-                ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines.slice(0, initialLines).join('\n')}{'\n...'}</span><br /><ToggleButton onClick={() => setExpanded(true)}>Show more</ToggleButton></>
-                : <><span style={{ position: 'relative', zIndex: 1 }}>{note}</span>{showToggle && <><br /><ToggleButton onClick={() => setExpanded(false)}>Show less</ToggleButton></>}</>
-            }
+            {isArray ? (
+              expanded
+                ? <><span style={{ position: 'relative', zIndex: 1 }}>{
+                    (() => {
+                      const first = note[0].endsWith('...') ? note[0].slice(0, -3) : note[0];
+                      const second = note[1];
+                      // Add a space if needed between first and second
+                      if (first && second && /[\w)]$/.test(first) && /^[\w(]/.test(second)) {
+                        return first + ' ' + second;
+                      }
+                      return first + second;
+                    })()
+                  }</span><br /><ToggleButton onClick={() => setExpanded(false)}>Show less</ToggleButton></>
+                : <><span style={{ position: 'relative', zIndex: 1 }}>{note[0].endsWith('...') ? note[0] : note[0] + '...'} </span><br /><ToggleButton onClick={() => setExpanded(true)}>Show more</ToggleButton></>
+            ) : (
+              id === 'iexist' && !expanded
+                ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines[0]}</span></>
+                : showToggle && !expanded
+                  ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines.slice(0, initialLines).join('\n')}{'\n...'}</span><br /><ToggleButton onClick={() => setExpanded(true)}>Show more</ToggleButton></>
+                  : <><span style={{ position: 'relative', zIndex: 1 }}>{note}</span>{showToggle && <><br /><ToggleButton onClick={() => setExpanded(false)}>Show less</ToggleButton></>}</>
+            )}
           </>
         ) : null}
       </Note>
