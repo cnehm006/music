@@ -10,7 +10,7 @@ import SongsLibrary from './components/SongsLibrary';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/music">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
