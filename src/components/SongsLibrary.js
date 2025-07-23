@@ -51,7 +51,7 @@ function SongsLibrary() {
           </li>
         ))}
       </SongList>
-      <RandomButton songCount={songs.length} />
+      <RandomButton songIds={songs.map(song => song.id)} />
     </Wrapper>
   );
 }

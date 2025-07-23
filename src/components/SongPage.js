@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Player from './Player';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -61,6 +61,7 @@ const Note = styled.div`
   transition: filter 0.3s;
   text-align: center;
   position: relative;
+  white-space: pre-line;
 `;
 
 const Nav = styled.div`
@@ -105,9 +106,10 @@ function CollapsibleLyrics({ lyrics, initialLines = 4 }) {
   const [expanded, setExpanded] = useState(false);
   const lines = lyrics.split('\n');
   const showToggle = lines.length > initialLines;
+  const isItalic = lyrics.trim().toLowerCase() === 'no lyrics.';
   return (
     <LyricsWrapper>
-      <Lyrics>
+      <Lyrics style={isItalic ? { fontStyle: 'italic', color: '#888' } : {}}>
         {expanded
           ? <>{lyrics}<br /><ToggleButton onClick={() => setExpanded(e => !e)}>Show less</ToggleButton></>
           : <>{lines.slice(0, initialLines).join('\n')}{showToggle ? '\n...' : ''}<br />{showToggle && <ToggleButton onClick={() => setExpanded(e => !e)}>Show more</ToggleButton>}</>}
@@ -145,8 +147,20 @@ function Sparkles({ count = 18 }) {
 }
 
 function NoteReveal({ note }) {
+  const { id } = useParams();
   const [unlocked, setUnlocked] = useState(false);
   const [hideOverlay, setHideOverlay] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const lines = note.split('\n');
+  const initialLines = id === 'iexist' ? 1 : 4;
+  const showToggle = id !== 'iexist' && lines.length > initialLines;
+
+  useEffect(() => {
+    setUnlocked(false);
+    setHideOverlay(false);
+    setExpanded(false);
+  }, [id]);
+
   return (
     <NoteWrapper>
       <Note style={{ position: 'relative' }}>
@@ -165,7 +179,16 @@ function NoteReveal({ note }) {
             </TwinkleOverlay>
           )}
         </AnimatePresence>
-        <span style={{ position: 'relative', zIndex: 1 }}>{note}</span>
+        {unlocked || hideOverlay ? (
+          <>
+            {id === 'iexist' && !expanded
+              ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines[0]}</span></>
+              : showToggle && !expanded
+                ? <><span style={{ position: 'relative', zIndex: 1 }}>{lines.slice(0, initialLines).join('\n')}{'\n...'}</span><br /><ToggleButton onClick={() => setExpanded(true)}>Show more</ToggleButton></>
+                : <><span style={{ position: 'relative', zIndex: 1 }}>{note}</span>{showToggle && <><br /><ToggleButton onClick={() => setExpanded(false)}>Show less</ToggleButton></>}</>
+            }
+          </>
+        ) : null}
       </Note>
     </NoteWrapper>
   );
@@ -193,10 +216,9 @@ function SongPage() {
       <NoteReveal note={song.note} />
       <Nav>
         <button onClick={goPrev} disabled={currentIndex <= minId}>Prev</button>
-        <button onClick={goHome}>Home</button>
         <button onClick={goNext} disabled={currentIndex >= maxId}>Next</button>
       </Nav>
-      <RandomButton songCount={songs.length} />
+      <RandomButton songIds={songs.map(s => s.id)} />
     </Wrapper>
   );
 }

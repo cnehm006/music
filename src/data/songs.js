@@ -59,6 +59,127 @@ Don't let go, don't let go, don't let go
 Because I'm afraid, I'm afraid, I'm afraid
 I'm afraid, I'm afraid, I'm afraid, I'm afraid"`,
     note: `I’m gonna change. Okay? I can do it. I can change. I will be who I want to be. People grow and change. Some day, I won’t hate myself and the people I surround myself with. I’ll be okay. We can do this.`
+  },
+  {
+    id: 'wecouldlivenearthebeach',
+    title: 'We Could Live Near the Beach',
+    artist: 'Flatsound',
+    src: process.env.PUBLIC_URL + '/songs/wecouldlivenearthebeach/song.mp3',
+    art: process.env.PUBLIC_URL + '/songs/wecouldlivenearthebeach/cover.jpg',
+    lyrics: 'no lyrics.',
+    note: `maybe you could hurt me
+
+Hurt me just a little
+
+To help me ease the pain
+
+Or maybe you could kill me
+
+One to the back of the head
+
+Just leave me in the rain
+
+Or what if we decided
+
+Instead we’d hold each other
+
+For a little while
+
+But maybe forever
+
+And maybe we’d be the fifty percent
+
+That didn’t quite make it
+
+Or maybe we could have it all
+
+Twenty kids and a picket
+
+And maybe..
+
+We could live near the beach
+
+In a tall, tall mountain
+
+Johnson and sea grass
+
+Floating like ribbons
+
+Seagulls would fly overhead
+
+We would dance to our music
+
+We would worry about nothing
+
+We have time for that when we’re dead.
+
+Maybe it’s a little
+
+Silly fantasy of mine
+
+But we could build our home
+
+In the thickets and vines
+
+No one around to bother us
+
+No one to bring us harm
+
+Just me and our beach home
+
+And you to keep me warm..
+
+oh..
+
+We could live near the beach
+
+In a tall, tall mountain
+
+Johnson and sea grass
+
+Floating like ribbons
+
+Seagulls would fly overhead
+
+We would dance to our music
+
+We would worry about nothing
+
+We have time for that when we’re dead.
+
+Is it
+
+So
+
+Much to ask
+
+For an ending that isn’t so bitter
+
+As the last?
+
+Is it
+
+Too
+
+Hard
+
+To maintain something like this with getting bored?
+
+not if we live near the beach
+
+In a tall, tall mountain
+
+Johnson and sea grass
+
+Floating like ribbons
+
+Seagulls would fly overhead
+
+We would dance to our music
+
+We would worry about nothing
+
+We have time for that when we’re dead.`
   }
 ];
 

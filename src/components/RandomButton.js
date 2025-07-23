@@ -33,10 +33,11 @@ const Button = styled.button`
   }
 `;
 
-function RandomButton({ songCount = 5 }) {
+function RandomButton({ songIds }) {
   const navigate = useNavigate();
   const goRandom = () => {
-    const randomId = Math.floor(Math.random() * songCount) + 1;
+    if (!songIds || songIds.length === 0) return;
+    const randomId = songIds[Math.floor(Math.random() * songIds.length)];
     navigate(`/song/${randomId}`);
   };
   return <Button onClick={goRandom}>random</Button>;
