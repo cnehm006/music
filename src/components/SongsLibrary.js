@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import RandomButton from './RandomButton';
 import songs from '../data/songs';
 
@@ -76,7 +77,7 @@ function SongsLibrary() {
       <Title>all songs</Title>
       <SongGrid>
         {songs.map(song => (
-          <SongCard href={`/song/${song.id}`} key={song.id}>
+          <SongCard as={Link} to={`/song/${song.id}`} key={song.id}>
             <Cover src={song.art} alt={song.title} />
             <SongTitle>{song.title}</SongTitle>
             <SongArtist>{song.artist}</SongArtist>
