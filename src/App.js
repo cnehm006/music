@@ -6,11 +6,13 @@ import Navigation from './components/Navigation';
 import About from './components/About';
 import Blog from './components/Blog';
 import Ask from './components/Ask';
+import RandomButton from './components/RandomButton';
 
 function App() {
   return (
     <Router>
       <Navigation />
+      <RandomButton songCount={5} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/song/:id" element={<SongPage />} />

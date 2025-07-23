@@ -43,13 +43,8 @@ const SongLink = styled.a`
   padding: 0.5em 1em;
   border-radius: 8px;
   background: #f3f1ee;
-  transition: background 0.2s, color 0.2s;
   opacity: 0.92;
-  &:hover, &:focus {
-    background: #e0dedb;
-    color: #111;
-    outline: none;
-  }
+  /* No hover/focus styles for true minimalism */
 `;
 
 function Home() {
