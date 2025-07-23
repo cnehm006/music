@@ -33,7 +33,7 @@ function About() {
     <Wrapper>
       <Title>about me</Title>
       <Text>
-        (Write something about yourself here. This is your space to be as honest or as cryptic as you want.)
+        (Coming soon.)
       </Text>
     </Wrapper>
   );
