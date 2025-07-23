@@ -8,7 +8,7 @@ const Nav = styled.nav`
   top: 0;
   height: 100vh;
   width: 100px;
-  background: #f8f6f3;
+  background: #f8f6f3 !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -35,6 +35,7 @@ const NavList = styled.ul`
   flex-direction: column;
   gap: 2.2rem;
   width: 100%;
+  background: transparent !important;
   @media (max-width: 600px) {
     flex-direction: row;
     gap: 1.5rem;
@@ -46,6 +47,7 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   width: 100%;
+  background: transparent !important;
 `;
 
 const NavButton = styled(NavLink)`
@@ -59,18 +61,18 @@ const NavButton = styled(NavLink)`
   border-radius: 10px;
   margin-left: 0.1em;
   transition: color 0.18s, font-weight 0.18s;
-  background: transparent;
+  background: transparent !important;
   outline: none;
   &.active {
     color: #222;
-    font-weight: 700;
-    background: transparent;
+    font-weight: 600;
+    background: transparent !important;
     box-shadow: none;
   }
-  &:hover, &:focus {
+  &:hover:not(.active), &:focus-visible:not(.active) {
     color: #222;
-    background: transparent;
     font-weight: 600;
+    background: transparent !important;
   }
 `;
 
@@ -80,6 +82,9 @@ function Navigation() {
       <NavList>
         <NavItem>
           <NavButton to="/">home</NavButton>
+        </NavItem>
+        <NavItem>
+          <NavButton to="/songs">songs</NavButton>
         </NavItem>
         <NavItem>
           <NavButton to="/about">about</NavButton>

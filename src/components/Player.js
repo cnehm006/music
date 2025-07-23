@@ -39,7 +39,6 @@ const Button = styled.button`
 }
 
   &:hover, &:focus {
-    background: #e0dedb;
     color: #111;
     outline: none;
   }

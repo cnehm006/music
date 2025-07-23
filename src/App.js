@@ -6,19 +6,19 @@ import Navigation from './components/Navigation';
 import About from './components/About';
 import Blog from './components/Blog';
 import Ask from './components/Ask';
-import RandomButton from './components/RandomButton';
+import SongsLibrary from './components/SongsLibrary';
 
 function App() {
   return (
     <Router>
       <Navigation />
-      <RandomButton songCount={5} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/song/:id" element={<SongPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/ask" element={<Ask />} />
+        <Route path="/songs" element={<SongsLibrary />} />
       </Routes>
     </Router>
   );
