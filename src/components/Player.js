@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const PlayerWrapper = styled.div`
@@ -48,10 +48,19 @@ const Seek = styled.input`
 `;
 
 function Player({ src, art, alt, title, artist }) {
-  const audioRef = React.useRef();
-  const [playing, setPlaying] = React.useState(false);
-  const [current, setCurrent] = React.useState(0);
-  const [duration, setDuration] = React.useState(0);
+  const audioRef = useRef();
+  const [playing, setPlaying] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [duration, setDuration] = useState(0);
+
+  useEffect(() => {
+    setPlaying(false);
+    setCurrent(0);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [src]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
