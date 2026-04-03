@@ -329,6 +329,56 @@ What I remember most is just the way everything seemed to come loose as a whole.
 
 So I keep it here for that reason. As a trace of an evening where grief, memory, affection, and distance all seemed to exist in the same breath. When I hear it now, I hear the fragile beauty of something being felt fully, perhaps for the last time, before it passed out of reach. Not just loss. Although I do hear loss a lot. That's besides the point. And maybe that is why it lingers the way it does, you know? Less like a wound, more like the outline left behind when something once held close is finally set down.`
     ]
+  },
+  {
+    id: 'wait',
+    title: 'Wait',
+    artist: 'M83',
+    src: process.env.PUBLIC_URL + '/songs/wait/song.mp3',
+    art: process.env.PUBLIC_URL + '/songs/wait/cover.jpg',
+    lyrics: `Send your dreams
+Where nobody hides
+Give your tears
+To the tide
+
+No time
+No time
+
+There's no end
+There is no goodbye
+Disappear
+With the night
+
+No time
+No time
+No time
+No time
+No time`,
+    note: [
+      `She gave me her M83 playlist and used to disappear into it.`,
+      ` My favorite was Wait. It sounds like the song that plays after the end of the world, when there is only one person left to hear it and even they have stopped asking for more time. I think that last human would not be scared. I think they would just stand there, looking at what is gone, and feel how strange it is that something can end and still be beautiful. That is what this song is to me. Not mourning in the usual way, only the feeling of staying still long enough to hear what remains.`
+    ]
+  },
+  {
+    id: 'outro',
+    title: 'Outro',
+    artist: 'M83',
+    src: process.env.PUBLIC_URL + '/songs/outro/song.mp3',
+    art: process.env.PUBLIC_URL + '/songs/outro/cover.jpg',
+    lyrics: `I'm the king of my own land
+Facing tempests of dust, I'll fight until the end
+Creatures of my dreams raise up and dance with me!
+Now and forever, I'm your king!`,
+    note: [
+      `Sorry my writing is jambled because i wrote this as soon as i finished watching at 4 am`,
+      `
+
+i finished mr robot and i genuinely don't even know what to do with myself right now. i'm still crying writing this. i can't remember the last time a show hit me like this, or if one ever even has. this didn't feel like i just watched something good. it felt like i lived inside it for a while and then got thrown out of it at the very end. and that ending, man. i was already emotional, but the second m83's Outro started playing i completely broke. like fully. tears instantly. i had no chance.
+
+what kills me is that the song already meant something to me before this. she had given me her whole m83 playlist, and Outro was one of those songs that stayed with me after everything fell apart. so hearing it at the very end of mr robot felt almost cruel lol. in the best way, but still cruel. i remember noticing they used Intro earlier in the show and being so happy about it, and then they bring in Outro for the finale and it just lands right in your chest. it felt so right that it hurt. like the show understood exactly what kind of wound it wanted to leave behind.
+
+i think that's why this show got me so badly. it understands pain in a way that doesn't feel fake or dressed up or there just to look deep. it feels real. ugly real. lonely real. the kind that sits in you quietly and changes how you move through the world. and somehow through all of that, through all the chaos and fear and broken parts of elliot, the show still has so much love in it. real love. not soft in a childish way, but soft in the way something is when it has been through hell and is still alive. i don't know. i just think this might be the most beautiful thing i've ever watched. probably my favorite show of all time. and right now Outro feels less like a song and more like a knife they twisted slowly and perfectly on the way out.`
+    ]
   }
 ];
 
