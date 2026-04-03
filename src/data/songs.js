@@ -270,6 +270,65 @@ The beat drop in this song still ruins me. Every time. It doesn’t come in loud
 
 And now... I don’t hate her. I don’t even resent her. I just hope she’s okay. I hope she’s happy in whatever life she’s building now. I still think All I Can is one of the most beautiful songs I’ve ever heard, ever. Not because it’s sad but because it reminds me I loved someone enough to feel like that when it ended. And maybe she didn’t feel it the same way. Maybe she never could. But I did. And I still do, sometimes. Not in a way that needs to go back. but in a way that thanks her quietly, even now, for being part of that chapter. Whatever, honestly. I don't know. End scene.`
     ]
+  },
+  {
+    id: 'picturesofyou',
+    title: 'Pictures of You',
+    artist: 'The Cure',
+    src: process.env.PUBLIC_URL + '/songs/picturesofyou/song.mp3',
+    art: process.env.PUBLIC_URL + '/songs/picturesofyou/cover.jpg',
+    lyrics: `I've been looking so long at these pictures of you
+That I almost believe that they're real
+I've been living so long with my pictures of you
+That I almost believe that the pictures are all I can feel
+
+Remembering you standing quiet in the rain
+As I ran to your heart to be near
+And we kissed as the sky fell in, holding you close
+How I always held close in your fear
+
+Remembering you running soft through the night
+You were bigger and brighter and wider than snow
+And screamed at the make-believe, screamed at the sky
+And you finally found all your courage to let it all go
+
+Remembering you fallen into my arms
+Crying for the death of your heart
+You were stone white, so delicate, lost in the cold
+You were always so lost in the dark
+
+Remembering you, how you used to be
+Slow drowned, you were angels, so much more than everything
+Hold for the last time, then slip away quietly
+Open my eyes, but I never see anything
+
+If only I'd thought of the right words
+I could have held on to your heart
+If only I'd thought of the right words
+I wouldn't be breaking apart
+All my pictures of you
+
+Looking so long at these pictures of you
+But I never hold on to your heart
+Looking so long for the words to be true
+And always just breaking apart
+My pictures of you
+
+There was nothing in the world
+That I ever wanted more
+Than to feel you deep in my heart
+There was nothing in the world
+That I ever wanted more
+Than to never feel the breaking apart
+My pictures of you`,
+    note: [
+      `Pictures of You feels tied to a night that seemed quiet on the surface and endless underneath.`,
+      ` It began with a song, a scene, a silence, and then that familiar feeling of something long-buried rising before either of us could stop it. Some songs undo a moment. They do not just accompany it. This one did. It turned the room inward. It made memory feel immediate again. In atmosphere; in the ache of recognition, in the strange tenderness of hearing something that already sounds like the past while it is still happening.
+
+What I remember most is just the way everything seemed to come loose as a whole. The softness of it. The heaviness of it. Oh and also crying my fucking eyes out. The sense that what had been held together for a long time was finally giving way, not violently, but all at once anyway, like something carefully wrapped being opened too late. There are certain conversations that do not feel like conversations but alas like the quiet removal of whatever had been keeping the deeper wound from the air. That is what this song became for me. The sound of that unsealing, the sound of truth arriving gently enough to be mistaken for mercy.
+
+So I keep it here for that reason. As a trace of an evening where grief, memory, affection, and distance all seemed to exist in the same breath. When I hear it now, I hear the fragile beauty of something being felt fully, perhaps for the last time, before it passed out of reach. Not just loss. Although I do hear loss a lot. That's besides the point. And maybe that is why it lingers the way it does, you know? Less like a wound, more like the outline left behind when something once held close is finally set down.`
+    ]
   }
 ];
 
